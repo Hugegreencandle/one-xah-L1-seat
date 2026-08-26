@@ -82,7 +82,7 @@ These are chain-level contributions any Xahau project can adopt, born from runni
 
 Every live hook is hash-locked with recorded lineage; every mainnet SetHook is preceded and followed by full-namespace state snapshots ("state byte-identical" is our standard of proof); testnet battle-testing is mandatory before any mainnet change; and when an exploit was found in June 2026, it was contained, forensically documented, and hardened against within days - in public changelogs. "Verify on-chain before claiming 'done' or 'broken' - never trust a stale doc" is a standing engineering rule.
 
-Our Audit & security seat brings a published, reproducible verification method backed by proofs on file. Every live hook is **verified byte-for-byte source-to-deployment** — repository source rebuilds to the exact live `HookHash` — and every hook carries **`hookz` behavioural proofs and Xahau testnet battle-test proofs** before it ever reaches mainnet. Our guard hooks carry **no fund-moving path**: a guard installed on an account holding user funds cannot move those funds. The protocol has **also undergone private external security review** — available to sitting members on request (the reviewer is not publicly named at this stage) — so this is not an in-house-only claim. Every byte-level result is independently re-checkable from public chain data. Current live builds: **[docs/live-hooks.md](docs/live-hooks.md)**; method: **[docs/security-review.md](docs/security-review.md)**.
+Security is led in-house by **Cbot Labs (Cody)** — the primary audit and hook-engineering work behind the protocol. Every live hook is **verified byte-for-byte source-to-deployment** (repository source rebuilds to the exact live `HookHash`) and carries **`hookz` behavioural proofs and Xahau testnet battle-test proofs** before it ever reaches mainnet. Our guard hooks carry **no fund-moving path**: a guard installed on an account holding user funds cannot move those funds. **Kairo Vault Technologies (Dane Brown)**, our Audit & security council member, structured the verification write-up and reviewed that work on-chain — a security firm’s check; we’re straight that, as a council seat, it isn’t an independent third-party audit. Every byte-level result is re-checkable by anyone with a node. Current live builds: **[docs/live-hooks.md](docs/live-hooks.md)**; method: **[docs/security-review.md](docs/security-review.md)**.
 
 ---
 
@@ -101,10 +101,10 @@ A trusted council spanning multiple continents, with role coverage across the fu
 
 | Member | Role |
 |---|---|
-| **Cbot (Cody)** | Founder, hook/contract development; Xahau validator operator |
+| **Cbot (Cody) — Cbot Labs** | Founder; hook & contract development and the protocol’s primary security/audit work — byte-for-byte, `hookz`, and testnet proofs on every live hook; Xahau validator operator |
 | **gadget78 (Mick)** | DevOps + within Evernode Community (also dev of evrPanel), bringing onexah to decentralized hosting - (elected to the council by on-chain community vote (PID 13) )|
 | **7Rays (Mike)** | Community outreach; on-chain council member |
-| **Dane Brown — Kairo Vault Technologies GK** (Huge Green Candle) | Audit & security; on-chain verification |
+| **Dane Brown — Kairo Vault Technologies GK** (Huge Green Candle) | Council member, Audit & security — structured the verification write-up and reviewed the work on-chain (a security firm; council seat, not an independent third-party audit) |
 
 As the community grows toward hundreds and then thousands of token-holder voters, the L1 seat's positions will be directed the same way everything else in Protocol X is: proposed openly, voted by stake, co-signed by council, executed on-chain. **A vote for this seat is a vote to put a community at the table.**
 

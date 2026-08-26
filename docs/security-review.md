@@ -1,14 +1,15 @@
-# Security & verification — what the Audit seat contributes
+# Security & verification
 
-**Dane Brown — Kairo Vault Technologies GK** (Huge Green Candle), OneXah DAO council, Audit & security.
-Point-in-time — re-verify against chain before formal submission rather than quoting from here.
-
-A summary of the on-chain verification behind the Audit seat. Full method and evidence live in the audit
-repo, where several sitting members already have access.
+The protocol's security is led by **Cbot Labs (Cody)** — the primary audit and hook-engineering work: every
+live build carries byte-for-byte source-to-deployment proof, `hookz` behavioural proofs, and Xahau testnet
+battle-test proofs. **Kairo Vault Technologies (Dane Brown)**, a DAO council member, structured this
+verification write-up and reviewed that work on-chain — a security firm's check; as a council seat, not an
+independent third-party audit. Point-in-time — re-verify against chain before formal submission rather than
+quoting here.
 
 ---
 
-## What has been verified
+## Guard hooks carry no fund-moving path
 
 **The raven guard carries no fund-moving path.** Its entire emission surface is `Invoke` + `TrustSet` —
 there is **no `Payment` template** in the build — so a guard installed on an account holding user funds
@@ -27,7 +28,7 @@ guard runs fleet-wide — the DAO, all three AMM pools, both lending pools, and 
 
 ## Proofs on file
 
-Held for every live hook and reproducible on request:
+Held for every live hook (Cbot Labs engineering) and reproducible on request:
 
 - **Byte-for-byte source-to-deployment** — repository source compiles to bytecode whose hash matches the live `HookDefinition`, exactly.
 - **`hookz` behavioural proofs** — the hook's logic is exercised against its test environment.
@@ -35,17 +36,15 @@ Held for every live hook and reproducible on request:
 
 ## Scope
 
-The byte-for-byte verification here is fully reproducible — re-checkable by any member from public chain
-data. It sits alongside **private external security review** of the protocol, available to sitting members
-on request (the reviewer is not publicly named at this stage) — so the security posture is not an
-in-house-only claim. The guard fails open on a registry-read miss **by design** — an availability choice
-that never lets it move funds. Full method, per-build provenance, and the external review are available to
-members on request.
+The byte-for-byte verification is fully reproducible — re-checkable by any member from public chain data.
+Kairo Vault Technologies (Dane) has reviewed the protocol on-chain; we're straight that, as a council seat,
+this is a security firm's review and **not an independent third-party audit**. The guard fails open on a
+registry-read miss **by design** — an availability choice that never lets it move funds. Full method,
+per-build provenance, and the review are available to sitting members on request.
 
-## Method, briefly
+## Method
 
-Reads come from two node endpoints (`xahau.network`, `xahau.org`) with distinct `pubkey_node`, and
-disagreement stops the check rather than being resolved by preference — though that is endpoint diversity,
-not operator diversity, since both are Xahau-core-associated. A hook counts as verified only when
-repository source builds to bytecode whose hash matches the live `HookDefinition`, and behaviour is read
-from the import table rather than from documentation.
+A hook counts as verified only when repository source builds to bytecode whose hash matches the live
+`HookDefinition`, and behaviour is read from the compiled import table rather than from documentation. Reads
+are taken from two independent node endpoints (`xahau.network`, `xahau.org`) and a disagreement halts the
+check rather than being resolved by preference.
