@@ -25,13 +25,22 @@ v4.9 is v4.8 hardened with audit fixes #152/#153 (report-gating on cooldown-pers
 guard runs fleet-wide — the DAO, all three AMM pools, both lending pools, and perps. Full live-build list:
 **[live-hooks.md](live-hooks.md)**.
 
+## Proofs on file
+
+Held for every live hook and reproducible on request:
+
+- **Byte-for-byte source-to-deployment** — repository source compiles to bytecode whose hash matches the live `HookDefinition`, exactly.
+- **`hookz` behavioural proofs** — the hook's logic is exercised against its test environment.
+- **Xahau testnet battle-test proofs** — mandatory before any mainnet change; freshly-funded accounts, adversarial cases.
+
 ## Scope
 
-Verification is in-house and fully reproducible — a hook counts as verified only when repository source
-compiles to bytecode whose hash matches the live `HookDefinition`, re-checkable by any member from public
-chain data. The guard fails open on a registry-read miss **by design** — an availability choice that never
-lets it move funds. Full method, per-build provenance, and audit evidence are available to sitting members
-on request.
+The byte-for-byte verification here is fully reproducible — re-checkable by any member from public chain
+data. It sits alongside **private external security review** of the protocol, available to sitting members
+on request (the reviewer is not publicly named at this stage) — so the security posture is not an
+in-house-only claim. The guard fails open on a registry-read miss **by design** — an availability choice
+that never lets it move funds. Full method, per-build provenance, and the external review are available to
+members on request.
 
 ## Method, briefly
 
