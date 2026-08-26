@@ -93,7 +93,7 @@ Key sources inside `c:\Users\codyr\Desktop\Code\100-2`: `README.md`, `llms.txt`,
 - [ ] Live DAO stats from `/api/public/v1/dao`: staker count, XXX holder count (richlist), proposal/vote participation counts.
 
 ### 4.3 People & security (supporting)
-- [ ] Short bios + roles + (optional) r-addresses for the full council: Cbot (Cody), gadget78 (Mick), 7Rays (Mike), Dane Brown — Kairo Vault Technologies GK (Big Green Candle).
+- [ ] Short bios + roles + (optional) r-addresses for the full council: Cbot (Cody), gadget78 (Mick), 7Rays (Mike), Dane Brown — Kairo Vault Technologies GK (Huge Green Candle).
 - [x] Dane Brown (Kairo Vault Technologies GK): audit/security work documented → **[docs/security-review.md](security-review.md)**; current live builds in **[docs/live-hooks.md](live-hooks.md)**.
 - [ ] Decide whether the fleet-sweep provenance notes are disclosed in the proposal or held for member due diligence on request — project's call; security-review.md states they exist and are available on request.
 - [ ] Geographic spread of council/validators ("different continents") - one line each, no doxxing needed.

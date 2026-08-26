@@ -15,7 +15,7 @@ lineage; anyone can confirm a `HookHash` here against the account's live `HookDe
 | Perps engine | `rPErP…` | `44CEC099…` |
 | Lending (XAH) | `rLoAxwmn…` | `7E206143…` |
 | Lending (EVR) — yield flywheel | `rLoANd…` | `9BC7773C…` |
-| **Raven guard** — fleet-wide (DAO, all AMMs, both lending, perps) | 7 accounts | **`4B04925A…`** |
+| **Raven guard v4.9** — fleet-wide (DAO, all AMMs, both lending, perps) | 7 accounts | **`4B04925A…`** |
 | BA-cron (native balance-reward poke) | fleet | `1C199BB0…` |
 | Escape-hatch (vote-gated recovery) | AMMs + lending + perps | `9412F476…` |
 

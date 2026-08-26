@@ -1,7 +1,7 @@
 # Security & verification — what the Audit seat contributes
 
 **Dane Brown — Kairo Vault Technologies GK** (Huge Green Candle), OneXah DAO council, Audit & security.
-Point-in-time as of **2026-08-19** — re-run before formal submission rather than quoting from here.
+Point-in-time — re-verify against chain before formal submission rather than quoting from here.
 
 A summary of the on-chain verification behind the Audit seat. Full method and evidence live in the audit
 repo, where several sitting members already have access.
@@ -10,20 +10,19 @@ repo, where several sitting members already have access.
 
 ## What has been verified
 
-**Both raven guard builds running on OneXah accounts have no fund-moving path.**
+**The raven guard carries no fund-moving path.** Its entire emission surface is `Invoke` + `TrustSet` —
+there is **no `Payment` template** in the build — so a guard installed on an account holding user funds
+cannot move those funds.
 
-| | v4.8 | v4.6 |
-|---|---|---|
-| `HookHash` | `91366A46…F46D02` | `D9BD75DD…` |
-| Size | 30,800 B | 25,512 B |
-| Source == deployed | ✅ | ✅ (from the `live/raven-D9BD75DD` tag) |
-| Emission templates | 4 × `Invoke`, 1 × `TrustSet` | identical |
-| `Payment` template | **none** | **none** |
+| | Raven guard — v4.9 (current fleet) |
+|---|---|
+| `HookHash` | `4B04925A…CFC8741` |
+| Source == deployed | ✅ repository source rebuilds to the live hash (re-checked 2026-08-25) |
+| Emission surface | `Invoke` + `TrustSet` |
+| `Payment` template | **none** |
 
-A guard installed on an account holding user funds therefore cannot move those funds. The guard runs
-fleet-wide — the DAO, all three AMM pools, both lending pools, and perps. Source-to-deployment
-verification was last re-run **2026-08-19** on the then-current build (`91366A46…`); the current fleet
-build (`4B04925A…`) is re-verified by the same method before formal submission. Full live-build list:
+v4.9 is v4.8 hardened with audit fixes #152/#153 (report-gating on cooldown-persist + emit-success). The
+guard runs fleet-wide — the DAO, all three AMM pools, both lending pools, and perps. Full live-build list:
 **[live-hooks.md](live-hooks.md)**.
 
 ## Scope
