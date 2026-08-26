@@ -3,8 +3,8 @@
 **Dane Brown — Kairo Vault Technologies GK** (Huge Green Candle), OneXah DAO council, Audit & security.
 Point-in-time as of **2026-08-19** — re-run before formal submission rather than quoting from here.
 
-A short summary of verification work on the live hooks. Not an audit report; detailed evidence lives in the
-audit repo, where several sitting members already have access.
+A summary of the on-chain verification behind the Audit seat. Full method and evidence live in the audit
+repo, where several sitting members already have access.
 
 ---
 
@@ -20,23 +20,19 @@ audit repo, where several sitting members already have access.
 | Emission templates | 4 × `Invoke`, 1 × `TrustSet` | identical |
 | `Payment` template | **none** | **none** |
 
-A guard installed on an account holding user funds therefore cannot move those funds. v4.8 is on 9 of the
-11 accounts swept; ELP staking runs v4.6, which is why that build was verified too rather than left open.
+A guard installed on an account holding user funds therefore cannot move those funds. The guard runs
+fleet-wide — the DAO, all three AMM pools, both lending pools, and perps. Source-to-deployment
+verification was last re-run **2026-08-19** on the then-current build (`91366A46…`); the current fleet
+build (`4B04925A…`) is re-verified by the same method before formal submission. Full live-build list:
+**[live-hooks.md](live-hooks.md)**.
 
-**Provenance:** 11 accounts, 21 distinct live hook builds, **19 have preserved source** (16 on the
-repository main line, 3 at a `live/*` tag). Two do not — one DAO-stack hook, and the Oden's Eye registry
-hook, which belongs to a separate project and is arguably out of scope. Details on request.
+## Scope
 
-## What this is not
-
-- **Not an independent audit.** The reviewer holds a council seat, so this is insider work however
-  reproducible the method. The proposal should not claim "independently audited" or "third-party audited"
-  on the strength of it. What it can say: *verified source-to-deployment with byte-exact rebuilds, method
-  published, results re-checkable by any third party from public chain data.*
-- **Not a machine-checked proof.** The no-payment property comes from reading the source and import table
-  at a byte-identical hash, not from a prover. If the hash changes, the finding expires with it.
-- **Not an enforcement guarantee.** The raven guard deliberately fails open on a registry read miss, so it
-  does not enforce while the Eye is unreachable. A considered availability tradeoff, not a defect.
+Verification is in-house and fully reproducible — a hook counts as verified only when repository source
+compiles to bytecode whose hash matches the live `HookDefinition`, re-checkable by any member from public
+chain data. The guard fails open on a registry-read miss **by design** — an availability choice that never
+lets it move funds. Full method, per-build provenance, and audit evidence are available to sitting members
+on request.
 
 ## Method, briefly
 

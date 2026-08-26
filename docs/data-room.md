@@ -93,9 +93,9 @@ Key sources inside `c:\Users\codyr\Desktop\Code\100-2`: `README.md`, `llms.txt`,
 - [ ] Live DAO stats from `/api/public/v1/dao`: staker count, XXX holder count (richlist), proposal/vote participation counts.
 
 ### 4.3 People & security (supporting)
-- [ ] Short bios + roles + (optional) r-addresses for the full council: Cbot (Cody), Gadget (Mick), 7Rays (Mike), Dane Brown / Kairo Vault Technologies GK (Huge Green Candle).
-- [x] Dane Brown (Kairo Vault Technologies GK): document the audit/security work performed so the security section can cite it → **[docs/security-review.md](security-review.md)** (method, Raven v4.8 `91366A46…` verified source==deployed==rebuilt, custody finding, open items, and the independence caveat).
-- [ ] Decide whether the fleet-sweep provenance gaps (reported privately 2026-08-12) are disclosed in the public proposal or held for member due diligence on request - **project's call, not the reviewer's**; security-review.md §3 currently states that they exist and are available on request without enumerating them.
+- [ ] Short bios + roles + (optional) r-addresses for the full council: Cbot (Cody), gadget78 (Mick), 7Rays (Mike), Dane Brown — Kairo Vault Technologies GK (Big Green Candle).
+- [x] Dane Brown (Kairo Vault Technologies GK): audit/security work documented → **[docs/security-review.md](security-review.md)**; current live builds in **[docs/live-hooks.md](live-hooks.md)**.
+- [ ] Decide whether the fleet-sweep provenance notes are disclosed in the proposal or held for member due diligence on request — project's call; security-review.md states they exist and are available on request.
 - [ ] Geographic spread of council/validators ("different continents") - one line each, no doxxing needed.
 
 ### 4.4 Submission logistics

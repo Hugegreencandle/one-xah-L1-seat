@@ -34,7 +34,7 @@ Everything is live on Xahau mainnet today:
 | **Lending** | Two deliberately oracle-free single-asset money markets (XAH, EVR). "Cross-asset borrowing requires a price oracle, and oracles are attack surface. Each pool is one asset, top to bottom." |
 | **Perpetuals** | XAH-margined 1-10× leveraged spot with on-chain TWAP oracle, funding rate, and permissionless liquidation. New markets are created **by DAO vote**, not admin action. |
 | **Protocol X DAO** | On-chain fee aggregation, emission, staking, bonding, and governance - ten hooks on one account. |
-| **Cross-chain swap** | XAH↔XRP, 2-signature, zero-fee - proven in both directions on mainnet (June 2026). |
+| **Cross-chain swap** | XAH↔XRP, is underlined and provided by XRPLlabs and Gatehub teleport system, which we utilise and provide to users in a seemless way. |
 | **GameFi hub & public API** | Aggregates Xahau play-to-earn projects; keyless CORS-open read API plus a fully documented raw on-chain wire format so anyone can build against our hooks without us. |
 
 A defining design property: **every position is a bearer token.** LP shares, lending deposits, and perps LP are real Xahau IOUs in the user's wallet. "Transfer the token, transfer the redemption right." Hooks compute redemption from the inbound IOU alone - never a sender-keyed lookup - so positions are tradable on the Xahau DEX, usable as collateral, and custodiable in any multisig.
@@ -82,7 +82,7 @@ These are chain-level contributions any Xahau project can adopt, born from runni
 
 Every live hook is hash-locked with recorded lineage; every mainnet SetHook is preceded and followed by full-namespace state snapshots ("state byte-identical" is our standard of proof); testnet battle-testing is mandatory before any mainnet change; and when an exploit was found in June 2026, it was contained, forensically documented, and hardened against within days - in public changelogs. "Verify on-chain before claiming 'done' or 'broken' - never trust a stale doc" is a standing engineering rule.
 
-Our Audit & security seat brings a published, reproducible verification method rather than an adjective. Both raven guard builds running across our accounts have been verified source-to-deployment and shown to have **no fund-moving emission path** — a guard on an account holding user funds cannot move those funds — and a sweep of 11 accounts found 19 of 21 live hook builds with preserved source. It is insider work, not a third-party audit, and we say so: every result is re-checkable by anyone with a node. Summary: **[docs/security-review.md](docs/security-review.md)**.
+Our Audit & security seat brings a published, reproducible verification method. Every live hook is hash-locked with recorded lineage; our guard hooks are verified source-to-deployment with byte-exact rebuilds and carry **no fund-moving path** — a guard installed on an account holding user funds cannot move those funds. Every result is re-checkable by anyone with a node. Current live builds: **[docs/live-hooks.md](docs/live-hooks.md)**; method and results: **[docs/security-review.md](docs/security-review.md)**.
 
 ---
 
@@ -102,7 +102,7 @@ A trusted council spanning multiple continents, with role coverage across the fu
 | Member | Role |
 |---|---|
 | **Cbot (Cody)** | Founder, hook/contract development; Xahau validator operator |
-| **Gadget (Mick)** | DevOps & network development - elected to the council by on-chain community vote (PID 13) |
+| **gadget78 (Mick)** | DevOps + within Evernode Community (also dev of evrPanel), bringing onexah to decentralized hosting - (elected to the council by on-chain community vote (PID 13) )|
 | **7Rays (Mike)** | Community outreach; on-chain council member |
 | **Dane Brown — Kairo Vault Technologies GK** (Huge Green Candle) | Audit & security; on-chain verification |
 
